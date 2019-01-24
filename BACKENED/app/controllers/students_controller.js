@@ -3,7 +3,7 @@ const router = express.Router();
 const { Student } = require('../models/student');
 
 //localhost:3001/students
-router.get('/get', function(req,res){
+router.get('/', function(req,res){
   Student.find().then(function(students){
     res.send(students);
   }).catch(function(err){
@@ -26,7 +26,7 @@ router.get('/:id', function(req,res){
 
 
 //localhost:3001/students
-router.post('/post', function(req,res){
+router.post('/', function(req,res){
   let body = req.body;
   console.log(body)
   let s = new Student(body);
